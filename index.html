@@ -1,0 +1,599 @@
+
+<!doctype html>
+
+<html lang="ko">
+
+<head>
+
+<title>HNH  https://tryncatch.tistory.com/11 </title>
+<link rel="icon" href="img/fabicon.png">
+
+<style>
+    
+/* 미디어쿼리 첫 관문 w:1055px */
+
+
+
+*{
+margin:0px;padding: 0;
+list-style:none;
+}
+
+a{text-decoration:none;
+  color:inherit;
+}
+
+div#header{
+    width:100%;
+    height: 94px;
+    background-color: rgba(100,180,255,1);
+    position: fixed;
+    z-index: 33;
+}
+
+body{
+    overflow-x: hidden;
+}
+
+.logo{
+    padding-top: 20px;
+    width:200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+@font-face { font-family: 'GongGothicMedium'; 
+src: url('[https://github.com/projectnoonnu/noonfonts_20-10/blob/main/GongGothicMedium.woff](https://github.com/projectnoonnu/noonfonts_20-10/blob/main/GongGothicMedium.woff)') format('woff'); font-weight: normal; font-style: normal; }
+@font-face {
+font-family: 'UhBeeJJIBBABBA';
+src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_five@.2.0/UhBeeJJIBBABBA.woff') format('woff');
+font-weight: normal;
+font-style: normal;
+}
+@font-face {
+    font-family: 'CookieRunOTF-Black';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/CookieRunOTF-Black00.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'CookieRunOTF-Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/CookieRunOTF-Bold00.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+
+
+nav{
+    margin-top: 10px;
+    width:100%;
+    height:32px;  
+    text-align: center;
+    background-color: rgb(255, 255, 255);
+}
+
+.navi{
+    margin: 0 auto;
+    width:100%;
+    text-align:center;   
+    border:1px solid #aaa; 
+}
+.navi ul{
+    margin: 0 auto;
+    width:648px;
+    height:31px;
+}
+
+
+
+
+.navi ul li{
+    z-index: 99999999;
+    margin-left: 20px;
+    margin-right: 20px;
+    width:120px;
+    height:26px;
+    padding-top: 4px;   
+    font-size:14px;
+    color:#888; 
+    font-family:'GongGothicMedium';
+    line-height:23px;
+    text-align:center;
+    float:left;
+}
+
+
+
+.navi ul li:hover{
+    margin-left: 20px;
+    margin-right: 20px;
+    width:120px;
+    height:25px;
+    padding-top: 4px;   
+    font-size:16.2px;
+    background-color: rgba(100,180,255,1);
+    color:#ffd; 
+    font-family: 'CookieRunOTF-Bold';
+    line-height:22px;
+    text-align:center;
+    float:left;    
+    border-top:1px solid #ffd; 
+    border-bottom:1px solid #ffd; 
+}
+
+
+
+
+#slide-wraper{
+    padding-top: 9px;
+    width:100%;
+    height: 79vh;
+    background-color: rgba(123, 185, 150, 0.13);
+    background-image: url('img/hnh-chday.gif');
+    background-position: center;
+    background-position-y: 40px;
+    overflow: hidden;
+}
+.slides{
+    width:9600px;
+    height: 100vh;
+}
+
+.slides li{
+    float: left;
+    width:100%;
+    top:50%;
+    transform:translateY(50%);
+}
+
+.btn_all{
+    width: 100%;
+    height: 650px;
+    position: absolute;
+    
+    top:-50%;
+}
+.prev{
+    background-image: url('img/btn/btn_prev_in.png');
+    border: 0;
+    outline: 0;
+    background-color: transparent;
+    left:50%;
+    margin-left: -460px;
+    top:50%;
+
+}
+.next{
+    background-image: url('img/btn/btn_next_in.png');
+    border: 0;
+    outline: 0;
+    background-color: transparent;
+    left:50%;
+    margin-left: 400px;
+    top:50%;
+} 
+
+
+
+
+
+
+.mouse_down{    
+    position: relative;
+    width: 100%;
+    height: 12vh;
+    padding-top: 4em;
+    margin:0 auto;
+    text-align: center;
+    bottom: 23px;
+    z-index: 0;
+}
+
+
+
+#topicwrapper{
+    width: 100%;
+    height: 80vh;
+    padding-top: 10.763em;
+    margin:0 auto;
+    background-color: rgba(173, 229, 255, 0.322);
+}
+.topic-title{
+    width: 20%;
+    margin:0 auto;
+    background-color: rgba(100,2,100,0.1);
+    text-align: center;
+    color:rgba(100,180,255,1);
+    font-family: 'CookieRunOTF-Black';
+    font-size: 1.5em;
+    border-radius: 1em;
+}
+.topic{
+    width:82.8125%;
+    margin:0 auto;
+    padding:0.26%;
+    text-align: center;
+}
+
+.topic img{
+    margin: 0.6%;
+    padding-top: 2em;
+}
+
+.widebanner{
+    margin-top: 0.5em;
+    padding-top: 1em;
+    bottom: 0;
+    width: 100%;
+    height: 2.5em;
+    background-color: #fcad22;
+    text-align: center;color:rgb(74, 6, 151);
+    font-family: 'CookieRunOTF-Black';
+    font-size: 3em;
+}
+
+#shopwrapper{
+    width: 100%;
+    height: 100vh;
+    padding-top: 10em;
+    margin:0 auto;
+    overflow: hidden;
+}
+.shop-title{
+    width: 20%;
+    _height: 4em;
+    margin:0 auto;
+    background-color: rgba(100,2,100,0.1);
+    text-align: center;
+    color:rgba(100,180,255,1);
+    font-family: 'CookieRunOTF-Black';
+    font-size: 1.5em;
+    border-radius: 1em;
+}
+.shop_slide{
+    padding-top: 4em;
+    width:100%;
+    margin:0 auto;
+    overflow: hidden;
+}
+.shop{
+    padding-top: 2em;
+    width:100%;
+    height: 30vh;
+    margin:0 auto;
+    text-align: center;
+    overflow: hidden;
+}
+
+.shop img{
+    margin: 0.2%;
+}
+
+
+#navershopwrapper{
+    width: 100%;
+    height: 50vh;
+    margin-top: 11em;
+    margin:0 auto;
+    background-color: rgb(78, 86, 153);
+}
+
+.navershop{
+    padding-top: 3em;
+    width:82.9166666%;
+    margin:0 auto;
+    text-align: center;
+    background-color: rgb(153, 78, 131);
+}
+
+.navershop img{
+    margin: 0.36458333333%;
+}
+
+
+.marqueewrapper{
+    width: 100%;
+    height: 96px;
+    margin:0 auto;
+    background-color: rgb(250, 237, 58);
+    text-align: center;
+}
+.marquee{
+    width:100%;
+    height: 100%;
+    margin:0 auto;
+    text-align: center;
+    overflow-y: hidden;
+    z-index: -1;
+}
+.marquee img{
+    margin: 0;
+    z-index: -10;
+}
+
+#pre_photoswrapper{
+    width: 100%;
+    height: 60vh;
+    padding-top: 3em;
+    margin:0 auto;
+    background-color: rgb(26, 18, 104);
+}
+.pre_photos_title{
+    width: 20%;
+    _height: 4em;
+    margin:0 auto;
+    background-color: rgba(100,2,100,0.1);
+    text-align: center;
+    color:rgba(100,180,255,1);
+    font-family: 'CookieRunOTF-Black';
+    font-size: 2.2em;
+    border-radius: 1em;
+}
+.pre_photos{
+    padding-top: 5em;
+    width:82.8125%;
+    height: 100%;
+    margin:0 auto;
+    padding:0.26%;
+    text-align: center;
+}
+.pre_photos img{    
+    margin: 0.6%;
+}
+
+
+
+#footer{
+    position: relative;
+    width:100%;
+    height: 15vh;
+    background: #1f3069;
+}
+
+.f-logo{
+    position: absolute;
+    float: left;
+    width:20%;
+    top:50%;
+    transform: translateY(-50%);
+    left:15%;
+}
+
+.f-business{
+    position: absolute;
+    top:50%;
+    transform: translateY(-50%);
+    width:60%;
+    height: 100px;
+    right: 20px;
+    background: transparent;
+    font-size: 0.88em;
+    color: rgb(158, 200, 228);
+}
+
+.f-business p{
+    position: absolute;
+    top:50%;
+    transform: translateY(-50%);
+}
+
+
+
+
+
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+    <div id="header">
+       
+<div class="logo"> 
+    <a href="index.html">
+<img src="img/logo.png" width="150px" alt="logo">
+</a>
+
+</div>
+
+<nav>
+
+<div class="navi">
+    <ul>
+    <a href="introduce.html"><li>HNH소개 </li></a>
+    <a href="#topicwrapper"><li>새소식 </li></a>
+    <a href="shop.html"><li>용돈주기 </li></a>
+    <a href="photoshow.html"><li>사진보기 </li></a>
+    </ul>
+</div>
+
+</nav>
+</div>
+</header>
+
+<br>
+
+<div id="slide-wraper">
+
+<ul class="slides">
+    <li><a href="#">
+        <img src="img/sl/slidebn01.jpg" width="100%" alt="슬라이드 1"></a>
+    </li>
+    <li><a href="#">
+        <img src="img/sl/slidebn02.jpg" width="100%" alt="슬라이드 2"></a>
+    </li>
+    <li><a href="#">
+        <img src="img/sl/slidebn03.jpg" width="100%" alt="슬라이드 3"></a>
+    </li>
+    <li><a href="#">
+        <img src="img/sl/slidebn04.jpg" width="100%" alt="슬라이드 4"></a>
+    </li>
+    <li><a href="#">
+        <img src="img/sl/slidebn05.jpg" width="100%" alt="슬라이드 5"></a>
+    </li>
+    <li><a href="#">
+        <img src="img/sl/slidebn06.jpg" width="100%" alt="슬라이드 6"></a>
+    </li>
+    <li><a href="#">
+        <img src="img/sl/slidebn07.jpg" width="100%" alt="슬라이드 7"></a>
+    </li>
+    <li><a href="#">
+        <img src="img/sl/slidebn8.jpg" width="100%" alt="슬라이드 8"></a>
+    </li>
+</ul>
+
+<div class="btn_all">
+    <button type="button" class="prev">    </button>
+    <button type="button" class="next">    </button>
+</div>
+
+
+</div>
+
+<div class="mouse_down">
+    <a href="#topicwrapper">
+<img src="img/scroll_down.svg" height="100px"></a>
+</div>
+
+<div id="topicwrapper"> 
+<div class="topic-title">
+    <a href="#topicwrapper">
+<h2>Topic</h2></a>
+</div>
+
+<div class="topic"> <a href="#topicwrapper">
+    <a href="https://qr.kakaopay.com/281006011000000397597100">
+    <img src="img/mockup_img_510.jpg" width="31.7%"></a>
+    <img src="img/mockup_img_510.jpg" width="31.7%">
+    <img src="img/mockup_img_510.jpg" width="31.7%">
+</div>
+
+<div class="widebanner">
+우리 HNH 유치원가요~★♥
+</div>
+
+</div>
+
+
+
+<div id="shopwrapper">
+    <div class="shop-title">
+
+        <a href="#shopwrapper"><h2>HNH굿즈♥</h2></a>
+    </div>
+    
+    <!-- 슬라이드 임. 중간에 낑기는 슬라이드 샵으로 보내는 -->
+    <div class="shop"> 
+    <img src="img/mockup_img_510.jpg" width="32.5333333%" height="100%">
+    <img src="img/mockup_img_510.jpg" width="32.5333333%" height="100%">
+    <img src="img/mockup_img_510.jpg" width="32.5333333%" height="100%">
+    
+    </div>
+</div>
+
+
+
+<div id="navershopwrapper">
+    
+    <!--  샵으로 보내는 -->
+    <div class="navershop"> 
+        <a href="https://smartstore.naver.com/julietsletters">
+    <img src="img/mockup_img_510.jpg" width="20%"></a>
+    <img src="img/mockup_img_510.jpg" width="20%">
+    <img src="img/mockup_img_510.jpg" width="20%">
+    <img src="img/mockup_img_510.jpg" width="20%">
+    
+    </div>
+</div>
+<div style="height: 16em;"></div>
+
+
+
+
+<div id="pre_photoswrapper"> 
+
+    <div class="pre_photos_title">
+        <h2>Photos</h2>
+    </div>
+
+<div class="marqueewrapper">
+    
+    <!--  뚠띄 사진 페이지로 보내는 -->
+    <div class="marquee"> 
+        <marquee>
+
+        <!-- </marquee>behavior="alternate" loop=300> -->
+        <img src="img/mockup_img_510.jpg" width="5%">
+        <img src="img/mockup_img_510.jpg" width="5%">
+        <img src="img/mockup_img_510.jpg" width="5%">
+        <img src="img/mockup_img_510.jpg" width="5%">
+        <img src="img/mockup_img_510.jpg" width="5%">
+        <img src="img/mockup_img_510.jpg" width="5%">
+        <img src="img/mockup_img_510.jpg" width="5%">
+        <img src="img/mockup_img_510.jpg" width="5%">
+        <img src="img/mockup_img_510.jpg" width="5%">
+        <img src="img/mockup_img_510.jpg" width="5%">
+        <img src="img/mockup_img_510.jpg" width="5%">
+        <img src="img/mockup_img_510.jpg" width="5%">
+        <img src="img/mockup_img_510.jpg" width="5%">
+        <img src="img/mockup_img_510.jpg" width="5%">
+        <img src="img/mockup_img_510.jpg" width="5%">
+        <img src="img/mockup_img_510.jpg" width="5%">
+        <img src="img/mockup_img_510.jpg" width="5%">
+        <img src="img/mockup_img_510.jpg" width="5%">
+        <img src="img/mockup_img_510.jpg" width="5%">
+        <img src="img/mockup_img_510.jpg" width="5%">
+        <img src="img/mockup_img_510.jpg" width="5%">
+        <img src="img/mockup_img_510.jpg" width="5%">
+        <img src="img/mockup_img_510.jpg" width="5%">
+        <img src="img/mockup_img_510.jpg" width="5%">
+        <img src="img/mockup_img_510.jpg" width="5%">
+        <img src="img/mockup_img_510.jpg" width="5%">
+        <img src="img/mockup_img_510.jpg" width="5%">
+        <img src="img/mockup_img_510.jpg" width="5%">
+        <img src="img/mockup_img_510.jpg" width="5%">
+    </marquee>
+    </div>
+</div>
+
+
+    <div class="pre_photos"> 
+        <img src="img/mockup_img_510.jpg" width="31.7%">
+        <img src="img/mockup_img_510.jpg" width="31.7%">
+        <img src="img/mockup_img_510.jpg" width="31.7%">
+    </div>
+</div>
+
+
+
+<div id="pre_photoswrapper"> 
+    <div class="pre_photos"> 
+        <img src="img/mockup_img_510.jpg" width="31.7%">
+        <img src="img/mockup_img_510.jpg" width="31.7%">
+        <img src="img/mockup_img_510.jpg" width="31.7%">
+    </div>
+</div>
+
+<footer>
+<div id="footer"> 
+    <div class="f-logo"> 
+        <img src="img/logo-f.png" width="50%">
+    </div>
+    <div class="f-business"> 
+        <p>
+            | 상호명:HNH주식회사 | 대표명:HNH | 사업자등록:20180-30-90808 | 전화번호:02-3030-8887654 |<br>
+            | 문의 : vozzang@gmail.com | 주소 : 서울 강남에살마늠나좋겠구 재밋동 888호 (0610778) |<br>
+ⓒ1996-2021 vozzang.com
+        </p>
+    </div>
+</div>
+</footer>
+
+</body>
+
+</html>
