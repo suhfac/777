@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
+        <style>
+            /* 여닫는 버튼 */
+            .accordion {
+                background-color: #eee;
+                color: #444;
+                /* 커서 모양 변경 */
+                cursor: pointer;
+                padding: 18px;
+                width: 100%;
+                border: none;
+                text-align: left;
+                outline: none;
+                font-size: 15px;
+                transition: 0.4s;
+            }
+
+            /* 클릭됐을 때 배경색 추가(js로 .active 클래스 추가), 호버했을 때 */
+            .active, .accordion:hover {
+                background-color: #ccc;
+            }
+
+            /* 아코디언 패널(평소엔 숨겨져 있음) */
+            .panel {
+                padding: 0 18px;
+                background-color: white;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.2s ease-out;
+            }
+        </style>
+    </head>
+    <body>
+        <button class="accordion">섹션1</button>
+        <div class="panel">
+            <p>어쩌고 저쩌고...</p>
+        </div>
+
+        <button class="accordion">섹션2</button>
+        <div class="panel">
+            <p>어쩌고 저쩌고...</p>
+        </div>
+
+        <button class="accordion">섹션3</button>
+        <div class="panel">
+            <p>어쩌고 저쩌고...</p>
+        </div>
+
+        <script>
+            var acc = document.getElementsByClassName("accordion");
+            var i;
+
+            for (i=0; i < acc.length; i++) {
+                acc[i].addEventListener("click", function() {
+                    // accordion에 active 클래스를 추가하거나 삭제함 (패널 컨트롤 버튼을 하이라이팅하기)
+                    this.classList.toggle("active");
+                    // active 패널을 보이거나 숨김
+                    var panel = this.nextElementSibling;
+                    if (panel.style.maxHeight) {
+                        panel.style.maxHeight = null;
+                    } else {
+                        panel.style.maxHeight = panel.scrollHeight + "px";
+                    }
+                });
+            }
+        </script>
+    </body>
+</html>
